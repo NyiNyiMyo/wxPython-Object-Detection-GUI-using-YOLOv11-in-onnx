@@ -1,0 +1,19 @@
+for windows,
+
+python -m venv venv
+.\venv\Scripts\activate
+pip install wxPython
+pip install numpy
+pip install opencv-python
+pip install onnxruntime
+
+python -m pip install pyinstaller
+python -m PyInstaller --onefile --windowed --add-data "models;models" yolo_wx_app.py
+
+for Linux,
+
+python3 -m venv .venv
+source .venv/bin/activate
+
+python3 -m pip install pyinstaller
+python3 -m PyInstaller --onefile --windowed --add-data "models:models" yolo_wx_app.py
